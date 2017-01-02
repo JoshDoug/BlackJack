@@ -1,0 +1,7 @@
+# BlackJack Project .gitignore
+
+out
+.idea
+*.swp
+*.iml
+

@@ -1,0 +1,82 @@
+//		System.out.println(cards.get(51).getSuit());
+//		System.out.println(cards.get(51).getRank());
+//		System.out.println(cards.get(51).getRank().getValue());
+
+//				hand1.add(cards.get(0));
+//				cards.remove(0);
+//				System.out.println(hand1.get(1).getRank());
+
+while (player1.getTotal() < 21 && player2.getTotal() < 21) {
+			boolean turn = true;
+			boolean stick1 = false;
+			boolean stick2 = false;
+			if (stick1 == false && (turn == true || stick1 == false)) {
+				System.out.println("Stick or twist?");
+				String twick = playerInput.nextLine();
+				if (twick.equalsIgnoreCase("t")) {
+					System.out.println("You have chosen twist.");
+					
+					hand1.add(cards.get(0));
+					cards.remove(0);
+					System.out.println(hand1.get(1).getRank());
+					player1.setTotal(hand1.get(1).getRank().getValue());
+					System.out.println("Your total is " + player1.getTotal());
+					turn = false;
+				}
+				else if (twick.equalsIgnoreCase("s")) {
+					System.out.println("You have chosen to stick, you will get no more turns");
+					stick1 = false;
+					turn = false;
+				}
+				else {
+					System.out.println("Valid option not chosen, please choose 't' to twist or 's' to stick");
+				}
+			}
+			else if (turn == false) {
+				String twick = playerInput.nextLine();
+				if (twick.equalsIgnoreCase("t")) {
+					hand2.add(cards.get(0));
+					cards.remove(0);
+					System.out.println(hand2.get(1).getRank());
+					turn = true;
+				}
+				else if (twick.equalsIgnoreCase("s")) {
+					System.out.println("You have chosen to stick, you will get no more turns");
+					stick2 = false;
+					turn = true;
+				}
+				else {
+					System.out.println("Valid option not chosen, please choose 't' to twist or 's' to stick");
+				}
+//				hand2.add(cards.get(0));
+//				cards.remove(0);
+			}
+//			else {
+//				
+//			}
+		}
+		
+//		System.out.println(cards.get(51).getSuit());
+//		System.out.println(cards.get(51).getRank());
+//		System.out.println(cards.get(51).getRank().getValue());
+		
+//		for (int i = 0; i<5; i++) {
+//			System.out.println(cards.get(i).getSuit());
+//			System.out.println(cards.get(i).getRank());
+//			System.out.println(cards.get(i).getRank().getValue());
+//		}
+
+
+//	public void setSuit(Suits suit) {
+//		this.suit = suit;
+//	}
+
+//	public void setRank(Ranks rank) {
+//		this.rank = rank;
+//	}
+
+		hand1.add(cards.get(0));
+		cards.remove(0);
+		System.out.println(hand1.get(0).getRank());
+		System.out.println(((Card) player1.getHand().get(0)).getRank());
+		System.out.println(cards.get(0).getRank());
